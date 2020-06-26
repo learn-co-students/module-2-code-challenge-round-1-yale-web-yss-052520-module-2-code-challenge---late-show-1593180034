@@ -1,0 +1,13 @@
+<h1>Episode <%= @episode.number %></h1>
+
+<p>
+        Date Aired: <%= @episode.date %>
+    <br/>
+        Guests: 
+        <ul> 
+        <% @episode.guests.each do |g| %>
+            <li><%= link_to g.name, g %></li><br/>
+        <% end %>
+        </ul>
+        Average Appearance Rating: <%= @episode.avg_appearance_rating %>
+</p>
