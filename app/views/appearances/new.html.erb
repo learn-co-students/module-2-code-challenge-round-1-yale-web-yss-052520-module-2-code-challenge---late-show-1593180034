@@ -1,0 +1,22 @@
+<%= link_to "<<Back to main", root_path %>
+
+<h1>New Appearance Form</h1>
+
+<% if flash[:errors] %>
+    <ul>
+    <% flash[:errors].each do |error| %>
+        <li style="color:red"><%= error %></li>
+    <% end %>
+    </ul>
+<% end %>
+
+<%= form_with model: @appearance do |f| %>
+    <%= f.label :episode %><%= f.collection_select :episode_id, @episodes, :id, :date %>
+    <br>
+    <%= f.label :guest %><%= f.collection_select :guest_id, @guests, :id, :name %>
+    <br>
+    <%= f.label :rating %><%= f.text_field :rating %>
+    <br>
+    <%= f.submit %>
+    <br>
+<% end %>

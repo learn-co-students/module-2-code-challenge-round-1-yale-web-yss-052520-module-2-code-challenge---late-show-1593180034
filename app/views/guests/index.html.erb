@@ -1,7 +1,16 @@
+<%= link_to "<<Back to main", root_path %>
+
 <h1>All The Guests</h1>
 
-<ul>
+<table>
+  <tr>
+    <th>Name</th>
+    <th># of Episodes</th>
+  </tr>
   <% @guests.each do |guest| %>
-    <li><%= guest.name %></li>
+    <tr>
+      <td><%= link_to guest.name, guest_path(guest) %></td>
+      <td><%= guest.episodes.count %>
+    </tr>
   <% end %>
-</ul>
+</table>

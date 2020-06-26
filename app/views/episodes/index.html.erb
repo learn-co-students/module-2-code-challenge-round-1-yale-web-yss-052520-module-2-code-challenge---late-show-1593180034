@@ -1,7 +1,18 @@
+<%= link_to "<<Back to main", root_path %>
+
 <h1>All Episodes</h1>
 
-<ul>
-  <% @episodes.each do |episode| %>
-    <li><%= "Episode #{episode.number} - #{episode.date.strftime("%B %d, %Y")}"%></li>
-  <% end %>
-</ul>
+<table>
+    <tr>
+        <th>Episode #</th>
+        <th>Air Date</th>
+        <th>Avg. Rating</th>
+    </tr>
+    <% @episodes.each do |episode| %>
+        <tr>
+            <td><%= episode.number %></td>
+            <td><%= link_to episode.date.strftime("%B %d, %Y"), episode_path(episode) %></td>
+            <td><%= episode.average_rating %></td>
+        </tr>
+    <% end %>
+</table>
