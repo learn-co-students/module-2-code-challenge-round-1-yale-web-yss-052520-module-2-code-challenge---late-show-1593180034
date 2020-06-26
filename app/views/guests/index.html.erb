@@ -1,7 +1,9 @@
 <h1>All The Guests</h1>
 
+<%=link_to "Log a new appearance", new_appearance_path %>
+
 <ul>
   <% @guests.each do |guest| %>
-    <li><%= guest.name %></li>
+    <li><%= link_to guest.name, guest %></li>
   <% end %>
-</ul>
+</ul> 

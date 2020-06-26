@@ -1,0 +1,32 @@
+<h1 style="color :green">Form to create a new appearance </h1>
+
+<% if flash[:errors]%>
+    <ul>
+        <% flash[:errors].each do |error| %>
+        <li style="color: red"> <%=error%>
+        </li>
+        <%end%>
+    </ul>
+<%end%>
+
+<%=form_for @appearance do |f|%>
+
+    <%=f.label :rating%> 
+    <%=f.number_field :rating%> (rate from 1 to 5!)
+    <br/>
+    <%=f.label :guest%>
+    <%=f.collection_select :guest_id, @guests, :id, :name %> 
+    <br/>
+    <%=f.label :episode%>
+    <%=f.collection_select :episode_id, @episodes, :id, :number %> 
+    <br/>
+    <%=f.submit%>
+
+<%end%>
+
+<%=link_to "Go back to all episodes", episodes_path %> <br/>
+<%=link_to "Go back to all guests", guests_path %> 
+
+<p>
+<img src="https://si.wsj.net/public/resources/images/BN-QC226_bonds1_H_20161003175622.jpg">
+</p>
