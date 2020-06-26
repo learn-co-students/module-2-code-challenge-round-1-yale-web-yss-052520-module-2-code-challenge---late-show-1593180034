@@ -1,0 +1,23 @@
+<%= link_to "<<All Guests", guests_path %>
+
+<h1><%= @guest.name %></h1>
+
+Occupation: <%= @guest.occupation %>
+<h2>Appearances:</h2>
+
+<table>
+    <tr>
+        <th>Episode #</th>
+        <th>Air Date</th>
+        <th>Rating</th>
+    </tr>
+    <% @sorted_appearances.each do |a| %>
+        <tr>
+            <td><%= a.episode.number %></td>
+            <td><%= link_to a.episode.date.strftime("%B %d, %Y"), episode_path(a.episode) %></td>
+            <td><%= a.rating %></td>
+        </tr>
+    <% end %>
+</table>
+
+<%= link_to "Add a new appearance", new_appearance_path %>
