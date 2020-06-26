@@ -1,0 +1,14 @@
+<h1 style="color:blue"><%= @guest.name %></h1>
+
+<h2>Episodes (from highest to lowest rated): </h2>
+
+<ul>
+    <% @guest.sorted_episodes.each do |episode| %>
+        <li><%= link_to episode.date, episode_path(episode)%></li>
+        Rating: <%= episode.find_appearance_rating(@guest) %>
+    <% end %>
+</ul>
+
+<h3><%= link_to "Create New Appearance", '/appearances/new' %></h3>
+
+<h3><%= link_to "All Guests", guests_path %></h3>
