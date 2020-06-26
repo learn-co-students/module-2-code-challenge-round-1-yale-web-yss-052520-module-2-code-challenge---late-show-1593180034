@@ -3,6 +3,6 @@ class Episode < ApplicationRecord
     has_many :guests, through: :appearances 
 
     def appearances_average_rating 
-        self.apperances.average(&:rating)
+        self.appearances.sum{|appearance| appearance.rating} / self.appearances.count
     end
 end

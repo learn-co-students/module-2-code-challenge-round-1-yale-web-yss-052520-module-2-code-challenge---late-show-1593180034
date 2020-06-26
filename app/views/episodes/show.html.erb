@@ -1,9 +1,11 @@
 <h1>Welcome to episode<%= @episode.number %> from <%= @episode.date %></h1>
 
-<h3>Here are the guests who graced our stage that night</h3>
+<h3>Here are the guests who graced our stage that night:</h3>
 
 <ul>
 <% @episode.guests.each do |guest| %>
 <li><%= link_to(guest.name, guest_path(guest))%></li>
 <% end %>
 </ul>
+
+Episode 

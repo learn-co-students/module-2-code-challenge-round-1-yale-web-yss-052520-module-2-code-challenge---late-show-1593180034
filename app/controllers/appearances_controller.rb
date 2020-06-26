@@ -9,10 +9,11 @@ class AppearancesController < ApplicationController
     end
 
     def create
+        # byebug
         @appearance = Appearance.new(appearance_params)
         if @appearance.valid?
             @appearance.save 
-            @episode = Episode.find(params[:episode_id])
+            @episode = Episode.find(appearance_params[:episode_id])
             redirect_to episode_path(@episode)
         else
             flash[:errors] = @appearance.errors.full_messages
