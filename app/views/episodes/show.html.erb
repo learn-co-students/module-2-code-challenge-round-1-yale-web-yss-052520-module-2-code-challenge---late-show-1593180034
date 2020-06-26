@@ -1,0 +1,7 @@
+<%= content_tag(:h2, "Episode: #{@episode.number}")%>
+<%= content_tag(:h2, "Date: #{@episode.date}")%>
+<%= content_tag(:h2, "Average Rating: #{@episode.appearances.average(:rating)}")%>
+<%= content_tag(:h2, "Guests")%>
+<% @episode.guests.each {|g|%>
+    <%= link_to g.name, guest_path(g)%> <br>
+<%}%>
