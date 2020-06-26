@@ -1,0 +1,14 @@
+<h1><%= @guest.name %><br></h1>
+<%= @guest.occupation %><br>
+
+
+
+<h2>Appearances:</h2>
+<ul>
+<% @appearances.sort_appearances.each do |appearance| %>
+    <li>
+    <%= link_to appearance.episode.date, "/episodes/#{appearance.episode.id}" %>, 
+    Rating: <%= appearance.rating %>
+    </li>
+<% end %>
+</ul>
