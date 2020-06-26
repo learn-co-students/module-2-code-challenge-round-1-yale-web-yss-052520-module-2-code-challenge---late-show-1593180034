@@ -1,0 +1,18 @@
+<h1> <%= @guest.name %> Info </h1>
+
+<h3>
+  Occupation: <%= @guest.occupation %>
+</h3>
+
+<h3>
+  Episodes:
+</h3>
+<ul>
+  <% @guest.episodes.each do |episode| %>
+      <li>
+          <%= link_to episode.date, episode_path(episode) %>
+          <% appearance = @guest.appearances.find { |app| app.episode_id == episode.id} %>
+          <%= "Rating: #{appearance.rating}" %>
+      </li>
+  <% end %>
+</ul>
