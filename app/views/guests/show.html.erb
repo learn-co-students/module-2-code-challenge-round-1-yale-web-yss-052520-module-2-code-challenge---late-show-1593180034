@@ -1,0 +1,11 @@
+<% unless @guest.episodes.empty? %>
+<h3> Episodes: </h3>
+<ul> 
+<% @guest.episodes_sorted.each do |episode| %>
+    <li> 
+        Date: <%= link_to episode.date, episode_path(episode) %>
+        Rating for Appearance: <%= episode.guest_rating(@guest) %>
+    </li>
+    <% end %>
+</ul>
+<% end %>
