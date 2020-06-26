@@ -1,0 +1,24 @@
+<h1>New Appearance</h1>
+
+<% if flash[:alert] %>
+<ul style="color:red">
+<% flash[:alert].each do |alert|%>
+<li><%= alert %></li>
+<%end%>
+</ul>
+<%end%>
+
+<%= form_for @appearance do |f|%>
+
+<%= f.label "Episode Date" %><br>
+<%= f.collection_select :episode_id, @episodes, :id, :nice_date %><br>
+
+<%= f.label "Guest" %><br>
+<%= f.collection_select :guest_id, @guests, :id, :name %><br>
+
+<%= f.label "Rating" %><br>
+<%= f.number_field :rating%><br>
+ 
+<%= f.submit %>
+
+<% end %>

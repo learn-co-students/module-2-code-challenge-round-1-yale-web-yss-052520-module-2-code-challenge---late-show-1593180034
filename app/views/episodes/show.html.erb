@@ -1,0 +1,10 @@
+<h1><%= @episode.title %></h1>
+<hr>
+<label>Guests:</label><br>
+<ul>
+<% @episode.guests.each do |guest| %>
+<li><%= link_to guest.name, guest_path(guest)%></li>
+<%end%>
+</ul>
+
+<label>Average rating: </label><%= @episode.average_rating %>

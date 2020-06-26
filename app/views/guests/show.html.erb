@@ -1,0 +1,11 @@
+<h1><%= @guest.name %></h1>
+<hr>
+<label>Occupation: </label>
+<%= @guest.occupation%>
+<br><br>
+<label>Appears on:</label> <br>
+<ul>
+<% @guest.episodes_by_rating.each do |episode| %>
+<li><%= link_to episode.title, episode_path(episode)%> (Rating: <%= Appearance.find_by_ids(@guest.id, episode.id).rating%>/5)</li>
+<%end%>
+</ul>
