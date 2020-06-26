@@ -1,0 +1,7 @@
+<h1>All Appearances</h1>
+
+<ul>
+  <% @appearances.each do |a| %>
+    <li><%= "#{a.guest.name}- Episode #{a.episode.number}" %></li>
+  <% end %>
+</ul>

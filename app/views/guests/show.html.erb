@@ -1,0 +1,5 @@
+<%= content_tag(:h2, "#{@guest.name}")%>
+<% @guest.sort_by_ratings.reverse.each {|e|%>
+    <%= link_to e.date, episode_path(e)%>
+    <%="Rating: #{@guest.appearances.find_by(episode_id: e.id).rating}"%> <br>
+<%}%>
