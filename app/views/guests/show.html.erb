@@ -1,0 +1,12 @@
+<h1><%= @guest.name %></h1>
+
+<p>Occupation: <%= @guest.occupation %></p>
+
+<% unless @guest.episodes.empty? %>
+    <h2>Appearances:</h2>
+    <ul>
+    <% @guest.episodes_order_by_rating.each do |episode| %>
+        <li>Episode: <%= link_to episode.date, episode %> - Rating: <%= episode.guest_rating(@guest) %></li>
+    <% end %>
+    </ul>
+<% end %>
