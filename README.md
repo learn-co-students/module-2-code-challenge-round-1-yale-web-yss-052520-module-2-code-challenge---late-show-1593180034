@@ -87,6 +87,7 @@ A user can fill out a form to create a new Appearance. They can:
 
 After submitting the form, the user should be redirected to the selected episode's show page.
 
+
 ### 3. Episode Show Page
 
 On the episode show page, a user should see:
