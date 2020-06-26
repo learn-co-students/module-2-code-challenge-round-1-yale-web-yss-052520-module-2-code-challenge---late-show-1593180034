@@ -1,0 +1,6 @@
+<h1><%= @episode.date.strftime("%B %e, %Y") %></h1>
+<ul>
+    <% @episode.guests.each do |guest| %>
+        <li><%= link_to guest.name, guest_path(guest) %></li>
+    <% end %>
+</ul>
