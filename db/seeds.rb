@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Guest.destroy_all
-
+Appearance.destroy_all
 require 'csv'
 
 csv_text = File.read(Rails.root.join('lib', 'seeds', 'daily_show_guests.csv'))

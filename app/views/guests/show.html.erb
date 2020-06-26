@@ -1,0 +1,10 @@
+<h1><%=@guest.name%></h1>
+
+<ul>
+    <%@guest.sort_by_rating.each do |appearance|%>
+        <li><%=link_to appearance.episode.info, episode_path(appearance.episode)%> </li>
+        <ul>
+            <li>Rating: <%=appearance.rating%></li>
+        </ul>
+    <%end%>
+</ul>
