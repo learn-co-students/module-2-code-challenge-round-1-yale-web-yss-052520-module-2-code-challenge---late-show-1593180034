@@ -1,0 +1,21 @@
+<h1>Episode <%=@episode.number%></h1>
+
+<p>Date: <%=@episode.date%></ </p>
+<br/>
+<p style="color :green">Average Rating: <%=@episode.average_rating%></p>
+
+Guests:
+<ul>
+    <%@episode.guests.each do |guest| %>
+    <li> <%=link_to guest.name, guest %> (Occupation: <%=guest.occupation%>)
+         (Appearance Rating: <%=guest.appearances.find_by(episode_id: @episode.id).rating%>) 
+    </li>
+
+    <%end%>
+</ul>
+
+<% if @episode.guests ==[] %> <p style="color: orange">Sorry, no guests appeared! </p>
+<%end%>
+
+<br/>
+<%=link_to "Go back to all episodes", episodes_path %>

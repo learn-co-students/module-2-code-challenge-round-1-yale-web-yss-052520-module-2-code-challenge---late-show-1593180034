@@ -4,7 +4,7 @@ For this assessment, you'll be working with Late Night TV show domain.
 
 In this repo, there is a Rails application with some features built out. Your job is to extend this code to add the functionality described in the deliverables below.
 
-## Topics
+## Topics 
 
 - MVC
 - REST
@@ -129,7 +129,7 @@ On the Episode show page, show the average rating of the Appearances for the epi
 
 On the Guest show page, order the Episodes by the Appearance rating so that the highest rated shows first in the list.
 
-### Feature Demo
+### Feature Demo 
 
 ![screen capture of feature demo](late-show-features-demo.gif)
 
