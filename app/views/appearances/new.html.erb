@@ -1,0 +1,20 @@
+<% if flash[:errors] %>
+    <ul>  
+        <% flash[:errors].each do |e| %>
+        <li style="color: red"> <%= e %></li>
+        <% end %>
+    </ul>
+<% end %>
+
+<%= form_for @appearance do |f| %>
+    <%= f.label :rating %>
+    <%= f.number_field :rating %>
+<br/>
+    <%= f.label :guest_id %>
+    <%= f.collection_select :guest_id, @guests, :id, :name  %>
+<br/> 
+    <%= f.label :episode_id %>
+    <%= f.collection_select :episode_id, @episodes, :id, :number %>
+<br/>
+    <%= f.submit %>
+<% end %>
