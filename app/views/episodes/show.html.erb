@@ -1,0 +1,14 @@
+<label>Episode Date:</label>
+<%= @episode.date %><br>
+
+<label>Episode Average Rating:</label>
+<%= @episode.appearances.average(:rating) %><br><br>
+
+<label>Guests:</label>
+<ul>
+<% @guests.each do |guest| %>
+    <li>
+    <%= link_to guest.name, "/guests/#{guest.id}" %>
+    </li>
+<% end %>
+</ul>
