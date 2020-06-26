@@ -1,0 +1,12 @@
+<h4>Guest: <%= @guest.name%> </h4>
+
+<ul>
+<% @guest.episodes.each do |episode| %>
+    <li><%= link_to episode.date.strftime("%B %d, %Y"), "/episodes/#{episode.id}"%>
+    	<h4>Rating: </h4>
+    	<%= Episode.find_appearance(@guest.id, episode.id).rating%>
+    	
+    </li>
+</ul>
+
+<% end %>
