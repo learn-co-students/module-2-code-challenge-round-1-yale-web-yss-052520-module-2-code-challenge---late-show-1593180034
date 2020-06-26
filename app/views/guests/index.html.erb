@@ -2,6 +2,8 @@
 
 <ul>
   <% @guests.each do |guest| %>
-    <li><%= guest.name %></li>
+    <li>
+        <%= link_to guest.name, "/guests/#{guest.id}"%>
+    </li>
   <% end %>
 </ul>
