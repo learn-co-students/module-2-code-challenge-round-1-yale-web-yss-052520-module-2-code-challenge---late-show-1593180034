@@ -1,0 +1,28 @@
+<h1>New Appearance</h1>
+
+<% if @appearance.errors.any?  %>
+    <h2> <%= pluralize(@appearance.errors.count, 'error') %> prevented this appearance from being saved: </h2>
+    
+    <div>
+        <ul>
+            <% @appearance.errors.messages.each do |key, messages| %>
+                <li><%= key %>:
+                    <% messages.each do |msg| %>
+                        <p><%= msg %></p>
+                    <% end %>
+                </li>
+            <% end %>
+        </ul>
+    </div>
+<% end %>
+
+<%= form_for @appearance do |f| %>
+    <%= f.label :episode %>
+    <%= f.collection_select :episode_id, @episodes, :id, :display_ep %>
+    <%= f.label :guest %>
+    <%= f.collection_select :guest_id, @guests, :id, :name%>
+    <%= f.label :rating%>
+    <%= f.number_field :rating %>
+    
+    <%= f.submit %>
+<% end %>

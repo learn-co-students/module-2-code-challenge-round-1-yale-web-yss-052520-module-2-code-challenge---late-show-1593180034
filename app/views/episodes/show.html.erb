@@ -1,0 +1,16 @@
+<h1><%=@episode.display_ep %></h1>
+
+<h2>Average Rating: <%= @episode.avg_rating %></h2>
+
+<h3>Guests</h3>
+
+<ul>
+   <% @episode.guests.each do |guest| %>
+        <li><%= link_to guest.name, guest_path(guest) %></li>
+   <% end %>
+
+</ul>
+
+<p><%= link_to "Add New Appearance", new_appearance_path %></p>
+<p><%= link_to "See All Guests", guests_path %></p>
+<p><%= link_to "See All Episodes", episodes_path %></p>
