@@ -1,0 +1,15 @@
+<h1> Guest Information </h1>
+
+<ul>
+    <% @guest.episodes.each do |episode|%>
+    <li>
+        <h3> Episode Date </h3>
+        <%= link_to episode.date, episode %>
+    
+        <% @guest.appearances.each do |appearance|%>
+            <h3> Appearance Rating </h3>
+            <%= appearance.rating %>
+        <% end %>
+        </li>
+     <% end %>
+</ul>
