@@ -1,0 +1,7 @@
+<h1>Oh my gosh, it's <%= @guest.name %></h1>
+
+<ul>
+<% @guest.appearances_highest_rated_first.each do |appearance| %>
+<li>Episode date: <%= link_to(appearance.episode.date, episode_path(appearance.episode)) %>, Rating: <%= appearance.rating %></li>
+<% end %>
+</ul>
