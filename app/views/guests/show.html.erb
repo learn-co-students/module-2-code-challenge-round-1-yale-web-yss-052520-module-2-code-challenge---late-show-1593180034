@@ -1,0 +1,3 @@
+<% @guest.episodes_sorted.each do |episode| %>
+<li> <%= link_to episode.date, episode_path(episode) %> </li>
+<% end %>
