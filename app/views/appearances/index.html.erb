@@ -1,0 +1,10 @@
+<h1>Appearances Index Page</h1>
+
+
+<ul>
+  <% @appearances.each do |appearance| %>
+    <li><%= appearance.guest_id %></li>
+    <li><%= appearance.episode_id %></li>
+    <li><%= appearance.rating %></li><br />
+  <% end %>
+</ul>

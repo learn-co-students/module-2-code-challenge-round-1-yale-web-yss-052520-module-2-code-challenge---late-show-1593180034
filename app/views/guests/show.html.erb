@@ -1,0 +1,15 @@
+<h1>Guest Show Page</h1>
+
+<label>Guest name:</label>
+<%= @guest.name %><br />
+
+<label>Occupation:</label>
+<%= @guest.occupation %><br />
+
+<label>Episodes Appeared In:</label><br />
+<%for appearance in @guest.ordered_appearances%>
+    <label>Episode date: </label>
+    <%=link_to appearance.episode.date, episode_path(appearance.episode)%>,
+    <label>Appearance rating: </label>
+    <%=appearance.rating%></br>
+<%end%>

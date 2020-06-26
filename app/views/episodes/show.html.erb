@@ -1,0 +1,10 @@
+<h1>Episode Show Page</h1>
+<label>Episode date:</label>
+<%= @episode.date %><br />
+<label>Avg. Appearance Rating:</label>
+<%=@episode.avg_app_rating%> <br />
+
+<label>Guests:</label>
+<%for guest in @episode.guests%>
+    <br /><%=link_to guest.name, guest_path(guest)%>
+<%end%>
